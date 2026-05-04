@@ -196,30 +196,66 @@ Con esto tienes un servidor Paper completamente funcional con los plugins esenci
     content: `
 # Subnetting en Linux paso a paso
 
-## ¿Qué es el subnetting?
+## ¿Qué problema resuelve el subnetting?
 
-Subnetting es la técnica de dividir una red IP en subredes más pequeñas para mejorar el rendimiento, la seguridad y la organización.
+Cuando una red es muy grande:
+- hay más tráfico
+- es difícil de organizar
+- es menos segura
 
-## Conceptos clave
+Solución:
+👉 dividir la red en subredes más pequeñas
 
-- Dirección de red: identifica la subred
-- Máscara de subred: define qué parte es red y qué parte es host
-- Broadcast: dirección final de cada subred
-- Hosts útiles: direcciones disponibles para dispositivos
+## Cómo funciona una IP
 
-## Ejemplo práctico
+Una dirección IP tiene dos partes:
 
-Dividir la red 192.168.1.0/24 en 4 subredes iguales:
+- Red → identifica la subred
+- Host → identifica el dispositivo
+
+Ejemplo:
+
+IP: 192.168.1.10  
+Máscara: /24  
+
+👉 Los primeros 24 bits son la red  
+👉 El resto son hosts  
+
+## Qué significa /24, /26, etc.
+
+No es magia.
+
+- /24 → 256 direcciones
+- /26 → 64 direcciones
+
+👉 Más bits para red = menos hosts disponibles
+
+## Cómo dividir una red (proceso mental)
+
+Red base:
+192.168.1.0/24
+
+Quieres:
+4 subredes
+
+Paso 1: cuántas subredes necesitas → 4  
+Paso 2: cuántos bits necesitas → 2 (2² = 4)  
+Paso 3: nueva máscara → /26  
+
+## Resultado
 
 \`\`\`
-Red original:  192.168.1.0/24  → 256 direcciones
-Nueva máscara: /26             → 64 direcciones por subred
-
-Subred 1: 192.168.1.0/26    (hosts: .1 a .62)
-Subred 2: 192.168.1.64/26   (hosts: .65 a .126)
-Subred 3: 192.168.1.128/26  (hosts: .129 a .190)
-Subred 4: 192.168.1.192/26  (hosts: .193 a .254)
+192.168.1.0/26    (hosts: .1 a .62)
+192.168.1.64/26   (hosts: .65 a .126)
+192.168.1.128/26  (hosts: .129 a .190)
+192.168.1.192/26  (hosts: .193 a .254)
 \`\`\`
+
+## Cómo saber dónde empieza cada subred
+
+👉 salto = tamaño de subred
+
+64 → 0, 64, 128, 192
 
 ## Configurar en Ubuntu con Netplan
 
@@ -260,7 +296,7 @@ ip route show table all
 \`\`\`
     `
   },
-
+// AÍ REST
   {
     id: 3,
     title: "Crear una API REST con Node.js y Express",
@@ -370,6 +406,9 @@ Antes de optimizar, hay que saber qué está causando el problema:
 
 # Ver entidades en el mundo actual
 /paper entity list
+
+# La opción MÁS recomendable, usa el plugin Spark
+/spark profiler start --timeout 600 (600s = 10m)
 \`\`\`
 
 ## paper-world-defaults.yml
@@ -421,9 +460,8 @@ java -Xmx4G -Xms4G \
 
 ## Plugins que mejoran el rendimiento
 
-- ClearLag: limpia entidades automáticamente
+- ClearLag: limpia entidades automáticamente. (También existe una función de eliminar entidades en spigot.yml-item-despawn-rate)
 - Chunky: pre-genera chunks para evitar lag al explorar
-- FarmControl: limita farms de mobs abusivas
     `
   },
 
