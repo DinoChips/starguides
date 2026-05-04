@@ -56,7 +56,7 @@ Un servidor para Minecraft puedes obtenerlo en muchísimas partes, muchos Host e
 
 Mis Host para servidores son:
 
-- <a href="https://bloom.host/">Bloom Host</a>
+- [Bloom Host](https://bloom.host/)
 
 Deberías ver algo como: \`openjdk 21.0.x\`. Si aparece esa línea, estás listo.
 
