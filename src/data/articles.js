@@ -37,43 +37,41 @@ export const articles = [
     content: `
 # Cómo montar un servidor Paper desde cero
 
-Paper es el fork de Minecraft más utilizado para servidores de comunidad. Ofrece mejor rendimiento que Spigot y una API más completa. Esta guía parte desde cero, sin experiencia previa necesaria.
-Paper no es el único Fork que existe, existen muchos más tales como: Spigot, Purpur, Pufferfish, Forge, etc... Los forks dependen del uso que quieras darle a tu servidor, el más amigable y global es Paper, el que usaremos en este caso.
+Paper es el fork de Minecraft más utilizado para servidores de comunidad. Ofrece mejor rendimiento que Spigot y una API más completa. Esta guía está pensada para quienes parten desde cero, sin experiencia previa necesaria.
+Paper no es el único fork disponible; existen muchos otros como Spigot, Purpur, Pufferfish y Forge. La elección del fork depende del uso que quieras darle a tu servidor. El más versátil y recomendado para la mayoría de casos es Paper, que es el que usaremos aquí.
 
 ## Requisitos previos
 
-Antes de empezar, necesitas:
+Antes de comenzar, asegúrate de contar con lo siguiente:
 
 - Un servidor o VPS
-- Al menos 2GB de RAM (recomendado 4GB para plugins)
+- Al menos 2 GB de RAM (se recomiendan 4 GB si planeas usar plugins)
 - Java 21 instalado en el servidor
 
 ## Paso 1: Obtener el servidor o VPS
 
-¿Cómo puedo obtener un servidor o VPS, y cuáles son sus diferencias?
+Un servidor para Minecraft puede contratarse en muchos lugares. Hay hosts especializados en Minecraft con distintos precios y características, así que busca el que mejor se adapte a tus necesidades y presupuesto.
 
-Un servidor para Minecraft puedes obtenerlo en muchísimas partes, muchos Host están dedicados especialmente a distribuir servidores para Minecraft, no todos son iguales, trata de buscar lo que más se ajuste a tu gusto y presupuesto.
-
-Mis Host para servidores son:
+Mis recomendaciones personales son:
 
 - [Bloom Host](https://bloom.host/)
 - [Holy Nodes](https://holynodes.com/minecraft)
 - [Tect Host](https://tect.host/)
 
-Puedes elegir cualquiera de estas 3 opciones, a opinión propia, están acomodadas por calidad. Si eres alguien nuevo, ve por Tect Host, si eres un poco más avanzado puedes considerar las otras 2 opciones.
+Están ordenadas por calidad según mi experiencia. Si estás empezando, **Tect Host** es la opción más accesible. Si ya tienes algo de experiencia, puedes considerar las otras dos.
 
-## Paso 2: Descargar Paper.
+## Paso 2: Descargar Paper
 
-Para descargar paper no hace falta otra cosa más que buscar en Google "PaperMC" y encontrarás la página. Por si no la encuentras, este es el link: https://papermc.io/downloads/paper
-Cuando entres a la página encontrarás SIEMPRE la versión más actualizada, si quieres otra versión que no sea la última puedes ir a este link: https://gist.github.com/osipxd/6119732e30059241c2192c4a8d2218d9
+Para descargar Paper, basta con buscar "PaperMC" en Google. Si quieres ir directo, aquí tienes el enlace: https://papermc.io/downloads/paper
+Si necesitas una versión anterior a la más reciente, puedes consultarlas aquí: https://gist.github.com/osipxd/6119732e30059241c2192c4a8d2218d9
 
-En este caso, usaré la versión 1.21.10. Puedes usar la que sea de tu preferencia o compatibilidad.
+En esta guía utilizaremos la versión 1.21.10. Puedes usar la que prefieras o la que mejor se adapte a tus necesidades.
 
-## Paso 3: Instalar Paper en el servidor.
+## Paso 3: Instalar Paper en el servidor
 
-Una vez hayas descargado el .jar de Paper, procederemos a instalarlo en tu servidor. 
-Debes de ir a los archivos de tu servidor, borrar todo lo que exista e instalar el .jar en los archivos. (Solo arrastralo o subelo allí)
-Una vez hayas subido el archivo a tu servidor, asegurate de que en el apartado "Starup" se mire de esta forma:
+Una vez descargado el .jar de Paper, el siguiente paso es instalarlo en tu servidor. 
+Ve al gestor de archivos de tu servidor, elimina cualquier archivo existente y sube el .jar que descargaste (puedes arrastrarlo directamente).
+Una vez subido el archivo, dirígete al apartado "Startup" y verifica que el .jar configurado allí sea EXACTAMENTE EL MISMO que el que está en tus archivos:
 
 SERVER JAR FILE
 \`\`\`bash
@@ -89,25 +87,25 @@ paper-1.21.10.jar
 
 ## Paso 4: Iniciar el arranque del servidor
 
-Si ya cumpliste con todos los pasos anteriores; felicidades, tienes Paper en tu servidor. Solo inicia el arranque de tu servidor haciendo click en el botón de inicio (generalmente, el botón verde)
+Si completaste todos los pasos anteriores, ¡felicidades! Ya tienes Paper instalado en tu servidor. Ahora solo queda iniciarlo haciendo clic en el botón de arranque (generalmente el botón verde).
 Esto lo encuentras en la consola de tu servidor.
 
-Cuando inicies tu servidor, te saldrá un enunciado de "EULA", tienes que aceptarlo. El EULA son los términos de Mojang y tienes que aceptarlos para iniciar el servidor. Cuando lo aceptes, puede que tu servidor se apague, solo vuelve a iniciarlo.
+Cuando inicies el servidor, aparecerá un aviso del "EULA", los términos de uso de Mojang que debes aceptar para poder arrancar el servidor. Es posible que tras aceptarlos el servidor se detenga; simplemente vuelve a iniciarlo.
 
 ## Paso 5: Instalar plugins, configuraciones importantes & permisos (opcional)
 
-Una vez el servidor está corriendo, instala estos plugins base. 
+Con el servidor funcionando, instala estos plugins base. 
 
-¿Dónde instalo los plugins y dónde los descargo? ¡MUY FÁCIL! Los plugins los instalas yendo a tus archivos y entrando a la carpeta plugins, allí los instalarás. Para descargarlos puedes ir a sitios como Spigot, Modrith, Bukkit. Cuando busques un plugin puedes buscarlo como "Pepito plugin minecraft" o "Pepito spigot"
+Los plugins se instalan dentro de la carpeta plugins, ubicada en los archivos de tu servidor. Para descargarlos, puedes buscarlos en plataformas como Spigot, Modrinth o Bukkit. Una búsqueda como "NombreDelPlugin spigot" o "NombreDelPlugin plugin minecraft" suele ser suficiente.
 
 ### LuckPerms (permisos)
-El estándar para gestión de permisos. Descarga desde luckperms.net.
+El estándar para la gestión de permisos en servidores de Minecraft. Descárgalo desde \`https://luckperms.net/\`
 
 ### EssentialsX (comandos básicos)
-Agrega /home, /warp, /tpa y 200 comandos más. Descarga desde essentialsx.net.
+Añade /home, /warp, /tpa y más de 200 comandos adicionales. Descárgalo desde \`https://essentialsx.net./downloads\`, asegúrate de instalar la versión **Stable Release**, no la *Development Build*.
 
 ### WorldGuard (protección de zonas)
-Imprescindible para proteger el spawn y zonas importantes. Descarga desde https://modrinth.com/plugin/worldguard/versions
+Indispensable para proteger el spawn y otras zonas importantes. Descárgalo desde \`https://modrinth.com/plugin/worldguard/versions\`
 
 ## Configuración importante
 
@@ -156,20 +154,21 @@ entities:
 
 # Permisos
 
-Para ajustar los permisos, usaremos el plugin LuckPerms, esto permitirá ajustar permisos hacia jugadores y otros rangos. Los siguientes comandos se usan dentro del juego, asegurate de tener OP antes de usarlos.
-"OP" significa tener TODOS los permisos, si crearás un servidor, tienes que tenerlo solo TÚ porque eres el dueño, no des este permiso a otros a menos que confies MUCHO en esta persona (ejemplo, otro owner). Date este permiso desde la consola poniendo \`op tunombre\`
+Para gestionar los permisos, usaremos LuckPerms, que permite asignar permisos a jugadores y rangos de forma granular. Los siguientes comandos se ejecutan dentro del juego, así que asegúrate de tener OP antes de usarlos.
+El OP otorga todos los permisos del servidor. Debes tenerlo únicamente tú como dueño, y solo otorgarlo a alguien de absoluta confianza (como otro owner). Para darte OP desde la consola, ejecuta \`op tunombre\`
 
-Para crear un rango usa el comando \`/lp creategroup nombredelrango\`, esto te servirá por si quieres crear rangos como Owner, Mod, Vip..
-Para editar permisos usa el comando \`/lp group nombredelgrupo permission set/unset nombredelpermiso\`, por ejemplo (EssentialsX) \`lp group default permission set essentials.msg\`
-Para editar el color del grupo usa el comando \`lp group nombredelgrupo meta setprefix "&e&lnombredelgrupo ". Nota que tiene que ir entre comillas y con un espacio al final.\`
-Para grandes cambios, recomiendo usar el comando \`lp editor\` que abre una interfaz web.
+Para crear un rango usa el comando \`/lp creategroup nombredelrango\`, útil para rangos como Owner, Mod, Vip, etc.
+Para añadir un permiso usa el comando \`/lp group nombredelgrupo permission set nombredelpermiso\`, por ejemplo (EssentialsX) \`lp group default permission set essentials.msg\`
+Para quitar un permiso usa el comando \`/lp group nombredelgrupo permission unset nombredelpermiso\`
+Para cambiar el prefijo del grupo usa el comando \`lp group nombredelgrupo meta setprefix "&e&lnombredelgrupo "\`. Ten en cuenta que debe ir entre comillas y con un espacio al final.
+Para cambios más extensos, recomiendo usar el comando \`lp editor\` que abre una interfaz web muy completa.
 
-Esto es una muy pequeña guía de LuckPerms, si quieres entrar más a detalle puedes esperar la guía de LuckPerms.
+Esta es una introducción básica a LuckPerms. Si quieres profundizar más, puedes esperar la guía completa dedicada a este plugin.
 \`\`\`
 
 ## Conclusión
 
-Con esto tienes un servidor Paper funcional con plugins básicos. Cualquier duda, el Discord de StarGuides está disponible para abrir un ticket.
+Con esto tienes un servidor Paper completamente funcional con los plugins esenciales configurados. Si tienes alguna duda, el Discord de StarGuides está disponible para abrir un ticket.
     `
   },
 
