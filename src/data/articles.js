@@ -27,36 +27,36 @@ export const articles = [
   // ── ARTÍCULO COMPLETO DE EJEMPLO ──────────────────────────
   {
     id: 1,
-    title: "Cómo montar un servidor Paper desde cero",
+    title: "Cómo crear un servidor Paper desde cero",
     category: "minecraft",
-    excerpt: "Guía completa y actualizada para levantar un servidor Paper 1.21 en Ubuntu, desde la instalación de Java hasta la configuración de los primeros plugins esenciales.",
-    date: "2026-04-28",
+    excerpt: "Guía completa y actualizada para levantar un servidor Paper 1.21.",
+    date: "2026-05-4",
     readTime: "12 minutos",
-    tags: ["Paper", "Ubuntu", "Java", "Pterodactyl"],
+    tags: ["Paper", "Java", "Pterodactyl"],
     image: "🖥️",
     content: `
 # Cómo montar un servidor Paper desde cero
 
-Paper es el fork de Minecraft más utilizado para servidores de comunidad. Ofrece mejor rendimiento que Spigot y una API más completa. Esta guía parte desde cero: servidor Ubuntu limpio, sin experiencia previa necesaria.
+Paper es el fork de Minecraft más utilizado para servidores de comunidad. Ofrece mejor rendimiento que Spigot y una API más completa. Esta guía parte desde cero, sin experiencia previa necesaria.
+Paper no es el único Fork que existe, existen muchos más tales como: Spigot, Purpur, Pufferfish, Forge, etc... Los forks dependen del uso que quieras darle a tu servidor, el más amigable y global es Paper, el que usaremos en este caso.
 
 ## Requisitos previos
 
 Antes de empezar, necesitas:
 
-- Un servidor o VPS con Ubuntu 22.04 o superior
+- Un servidor o VPS
 - Al menos 2GB de RAM (recomendado 4GB para plugins)
-- Acceso SSH al servidor
-- Java 21 instalado
+- Java 21 instalado en el servidor
 
-## Paso 1: Instalar Java 21
+## Paso 1: Obtener el servidor o VPS
 
-Paper 1.21 requiere Java 21. Lo instalamos así:
+¿Cómo puedo obtener un servidor o VPS, y cuáles son sus diferencias?
 
-\`\`\`bash
-sudo apt update
-sudo apt install -y openjdk-21-jdk
-java -version
-\`\`\`
+Un servidor para Minecraft puedes obtenerlo en muchísimas partes, muchos Host están dedicados especialmente a distribuir servidores para Minecraft, no todos son iguales, trata de buscar lo que más se ajuste a tu gusto y presupuesto.
+
+Mis Host para servidores son:
+
+- <a href="https://bloom.host/">Bloom Host</a>
 
 Deberías ver algo como: \`openjdk 21.0.x\`. Si aparece esa línea, estás listo.
 
