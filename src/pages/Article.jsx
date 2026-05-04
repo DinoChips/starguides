@@ -59,6 +59,16 @@ function renderContent(content) {
       result.push(<h3 key={i} style={{ fontFamily: 'var(--font-ui)', fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,200,80,0.8)', margin: '28px 0 10px', letterSpacing: '0.02em' }}>{line.replace('### ', '')}</h3>);
       i++; continue;
     }
+    // Blockquote
+    if (line.startsWith('> ')) {
+      const items = [];
+      while (i < lines.length && lines[i].startsWith('> ')) {
+        items.push(<p key={i} style={{ margin: 0, color: 'rgba(200,210,255,0.6)', lineHeight: 1.8 }}>{renderInlineMarkdown(lines[i].replace('> ', ''))}</p>);
+        i++;
+      }
+      result.push(<blockquote key={`bq-${i}`} style={{ borderLeft: '2px solid rgba(255,200,80,0.4)', paddingLeft: 16, margin: '20px 0', background: 'rgba(255,200,80,0.04)', borderRadius: '0 4px 4px 0', padding: '12px 16px' }}>{items}</blockquote>);
+      continue;
+    }
     // List item
     if (line.startsWith('- ')) {
       const items = [];
@@ -79,27 +89,32 @@ function renderContent(content) {
 }
 
 function renderInlineMarkdown(text) {
-  // Renderiza [texto](url) como links
+  // Procesa: **negrita**, *cursiva*, `código`, [link](url)
   const parts = [];
-  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*|`([^`]+)`|\[([^\]]+)\]\(([^)]+)\))/g;
   let lastIndex = 0;
   let match;
 
   while ((match = regex.exec(text)) !== null) {
-    // Texto antes del link
     if (match.index > lastIndex) {
       parts.push(text.substring(lastIndex, match.index));
     }
-    // Link
-    parts.push(
-      <a key={match.index} href={match[2]} target="_blank" rel="noreferrer" style={{ color: '#ffd060', textDecoration: 'underline', transition: 'color 0.2s' }}>
-        {match[1]}
-      </a>
-    );
+    if (match[2] !== undefined) {
+      // **negrita**
+      parts.push(<strong key={match.index} style={{ color: 'rgba(240,240,255,0.9)', fontWeight: 700 }}>{match[2]}</strong>);
+    } else if (match[3] !== undefined) {
+      // *cursiva*
+      parts.push(<em key={match.index} style={{ color: 'rgba(200,210,255,0.75)', fontStyle: 'italic' }}>{match[3]}</em>);
+    } else if (match[4] !== undefined) {
+      // `código inline`
+      parts.push(<code key={match.index} style={{ fontFamily: 'var(--font-mono)', fontSize: 13, background: 'rgba(0,0,0,0.35)', border: '1px solid rgba(255,200,80,0.15)', borderRadius: 3, padding: '1px 6px', color: 'rgba(255,200,80,0.85)' }}>{match[4]}</code>);
+    } else if (match[5] !== undefined) {
+      // [link](url)
+      parts.push(<a key={match.index} href={match[6]} target="_blank" rel="noreferrer" style={{ color: '#ffd060', textDecoration: 'underline', transition: 'color 0.2s' }}>{match[5]}</a>);
+    }
     lastIndex = regex.lastIndex;
   }
 
-  // Texto restante
   if (lastIndex < text.length) {
     parts.push(text.substring(lastIndex));
   }
