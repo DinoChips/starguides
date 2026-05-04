@@ -57,83 +57,57 @@ Un servidor para Minecraft puedes obtenerlo en muchísimas partes, muchos Host e
 Mis Host para servidores son:
 
 - [Bloom Host](https://bloom.host/)
-- asd
+- [Holy Nodes](https://holynodes.com/minecraft)
+- [Tect Host](https://tect.host/)
 
-Deberías ver algo como: \`openjdk 21.0.x\`. Si aparece esa línea, estás listo.
+Puedes elegir cualquiera de estas 3 opciones, a opinión propia, están acomodadas por calidad. Si eres alguien nuevo, ve por Tect Host, si eres un poco más avanzado puedes considerar las otras 2 opciones.
 
-## Paso 2: Crear la carpeta del servidor
+## Paso 2: Descargar Paper.
 
+Para descargar paper no hace falta otra cosa más que buscar en Google "PaperMC" y encontrarás la página. Por si no la encuentras, este es el link: https://papermc.io/downloads/paper
+Cuando entres a la página encontrarás SIEMPRE la versión más actualizada, si quieres otra versión que no sea la última puedes ir a este link: https://gist.github.com/osipxd/6119732e30059241c2192c4a8d2218d9
+
+En este caso, usaré la versión 1.21.10. Puedes usar la que sea de tu preferencia o compatibilidad.
+
+## Paso 3: Instalar Paper en el servidor.
+
+Una vez hayas descargado el .jar de Paper, procederemos a instalarlo en tu servidor. 
+Debes de ir a los archivos de tu servidor, borrar todo lo que exista e instalar el .jar en los archivos. (Solo arrastralo o subelo allí)
+Una vez hayas subido el archivo a tu servidor, asegurate de que en el apartado "Starup" se mire de esta forma:
+
+SERVER JAR FILE
 \`\`\`bash
-mkdir -p /home/minecraft/server
-cd /home/minecraft/server
+tunombredejar.jar
 \`\`\`
 
-## Paso 3: Descargar Paper
+Por ejemplo:
 
-Ve a papermc.io y copia el link del JAR más reciente, o usa este comando directo:
-
+SERVER JAR FILE:
 \`\`\`bash
-wget https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/latest/downloads/paper-1.21.4-latest.jar -O paper.jar
+paper-1.21.10.jar
 \`\`\`
 
-## Paso 4: Crear el script de arranque
+## Paso 4: Iniciar el arranque del servidor
 
-Crea un archivo \`start.sh\` con el siguiente contenido:
+Si ya cumpliste con todos los pasos anteriores; felicidades, tienes Paper en tu servidor. Solo inicia el arranque de tu servidor haciendo click en el botón de inicio (generalmente, el botón verde)
+Esto lo encuentras en la consola de tu servidor.
 
-\`\`\`bash
-#!/bin/bash
-java -Xmx2G -Xms2G \
-  -XX:+UseG1GC \
-  -XX:MaxGCPauseMillis=200 \
-  -XX:+UnlockExperimentalVMOptions \
-  -XX:+DisableExplicitGC \
-  -jar paper.jar nogui
-\`\`\`
+Cuando inicies tu servidor, te saldrá un enunciado de "EULA", tienes que aceptarlo. El EULA son los términos de Mojang y tienes que aceptarlos para iniciar el servidor. Cuando lo aceptes, puede que tu servidor se apague, solo vuelve a iniciarlo.
 
-Luego dale permisos de ejecución:
+## Paso 5: Instalar plugins, configuraciones importantes & permisos (opcional)
 
-\`\`\`bash
-chmod +x start.sh
-./start.sh
-\`\`\`
+Una vez el servidor está corriendo, instala estos plugins base. 
 
-La primera vez generará los archivos y pedirá aceptar el EULA.
-
-## Paso 5: Aceptar el EULA
-
-\`\`\`bash
-echo "eula=true" > eula.txt
-\`\`\`
-
-Vuelve a correr \`./start.sh\` y el servidor arrancará.
-
-## Paso 6: Plugins esenciales
-
-Una vez el servidor está corriendo, instala estos plugins base. Descárgalos en la carpeta \`plugins/\` y reinicia:
+¿Dónde instalo los plugins y dónde los descargo? ¡MUY FÁCIL! Los plugins los instalas yendo a tus archivos y entrando a la carpeta plugins, allí los instalarás. Para descargarlos puedes ir a sitios como Spigot, Modrith, Bukkit. Cuando busques un plugin puedes buscarlo como "Pepito plugin minecraft" o "Pepito spigot"
 
 ### LuckPerms (permisos)
 El estándar para gestión de permisos. Descarga desde luckperms.net.
-
-\`\`\`bash
-# Comando básico para dar rango a un jugador
-/lp user <jugador> parent set <rango>
-\`\`\`
 
 ### EssentialsX (comandos básicos)
 Agrega /home, /warp, /tpa y 200 comandos más. Descarga desde essentialsx.net.
 
 ### WorldGuard (protección de zonas)
-Imprescindible para proteger el spawn y zonas importantes.
-
-\`\`\`bash
-# Seleccionar zona con WorldEdit
-//wand
-# Luego crear la región
-/rg define spawn
-# Aplicar flags
-/rg flag spawn pvp deny
-/rg flag spawn build deny
-\`\`\`
+Imprescindible para proteger el spawn y zonas importantes. Descarga desde https://modrinth.com/plugin/worldguard/versions
 
 ## Configuración importante
 
@@ -142,18 +116,20 @@ Edita \`server.properties\` para los ajustes básicos:
 \`\`\`bash
 # Cambiar nombre del servidor
 motd=Mi servidor de Minecraft
-
 # Modo de juego por defecto
 gamemode=survival
-
 # Máximo de jugadores
 max-players=50
-
-# Modo online (false = cracked, true = premium)
+# Modo online (false = no premium, true = premium) Recomendado que esté en false para que entren usuarios premium y no premium, pero si haces esto, asegurate de usar un plugin de seguridad como nLogin.
 online-mode=true
+# Perfil seguro
+enforce-secure-profile=false
+# Distancias de renderizado
+simulation-distance=5 (Esta es la distancia de simulación)
+view-distance=8 (Esta es la distancia de renderizado, lo que mira el JUGADOR)
 \`\`\`
 
-Y en \`paper-world-defaults.yml\` ajusta el rendimiento:
+Y en \`config/paper-world-defaults.yml\` ajusta el rendimiento:
 
 \`\`\`yaml
 chunks:
@@ -162,32 +138,38 @@ chunks:
 entities:
   spawning:
     spawn-limits:
-      monsters: 70
-      animals: 10
-\`\`\`
+      ambient: 20
+      axolotls: 5
+      creature: 10
+      monster: 30
+      underground_water_creature: 5
+      water_ambient: 10
+      water_creature: 5
+    ticks-per-spawn:
+      ambient: 100
+      axolotls: 400
+      creature: 400
+      monster: 20
+      underground_water_creature: 400
+      water_ambient: 400
+      water_creature: 400
 
-## Mantenerlo corriendo con Screen
+# Permisos
 
-Para que el servidor siga activo cuando cierres SSH:
+Para ajustar los permisos, usaremos el plugin LuckPerms, esto permitirá ajustar permisos hacia jugadores y otros rangos. Los siguientes comandos se usan dentro del juego, asegurate de tener OP antes de usarlos.
+"OP" significa tener TODOS los permisos, si crearás un servidor, tienes que tenerlo solo TÚ porque eres el dueño, no des este permiso a otros a menos que confies MUCHO en esta persona (ejemplo, otro owner). Date este permiso desde la consola poniendo \`op tunombre\`
 
-\`\`\`bash
-# Instalar screen
-sudo apt install screen
+Para crear un rango usa el comando \`/lp creategroup nombredelrango\`, esto te servirá por si quieres crear rangos como Owner, Mod, Vip..
+Para editar permisos usa el comando \`/lp group nombredelgrupo permission set/unset nombredelpermiso\`, por ejemplo (EssentialsX) \`lp group default permission set essentials.msg\`
+Para editar el color del grupo usa el comando \`lp group nombredelgrupo meta setprefix "&e&lnombredelgrupo ". Nota que tiene que ir entre comillas y con un espacio al final.\`
+Para grandes cambios, recomiendo usar el comando \`lp editor\` que abre una interfaz web.
 
-# Iniciar sesión de screen
-screen -S minecraft
-
-# Correr el servidor dentro
-./start.sh
-
-# Desconectarte sin cerrar el servidor: Ctrl + A, luego D
-# Volver a la sesión:
-screen -r minecraft
+Esto es una muy pequeña guía de LuckPerms, si quieres entrar más a detalle puedes esperar la guía de LuckPerms.
 \`\`\`
 
 ## Conclusión
 
-Con esto tienes un servidor Paper funcional con plugins básicos. El siguiente paso es configurar los permisos con LuckPerms y agregar los plugins específicos de tu servidor. Cualquier duda, el Discord de StarGuides está disponible para abrir un ticket.
+Con esto tienes un servidor Paper funcional con plugins básicos. Cualquier duda, el Discord de StarGuides está disponible para abrir un ticket.
     `
   },
 
