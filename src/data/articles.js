@@ -814,27 +814,108 @@ export const blogPosts = [
     tags: ["Personal", "Minecraft", "Historia"],
     image: "📖",
     content: `
-# Cómo empecé a administrar servidores desde cero
+# Cómo pasé de no entender nada a montar servidores funcionales
 
-Empecé sin saber nada. Literalmente. No sabía qué era un VPS, no sabía qué era SSH, y la primera vez que vi una terminal pensé que había roto algo.
+No empecé por curiosidad ni por dinero.
 
-Esto es lo que nadie te cuenta cuando empiezas.
+Empecé porque el primer servidor de Minecraft en el que jugué empezó a morir.
 
-## El primer servidor
+Cada vez entraba menos gente, todo se sentía abandonado, y eventualmente cerró. En ese punto no quise buscar otro. Quise hacer el mío.
 
-Mi primer servidor de Minecraft lo monté en un PC viejo que tenía en el cuarto. Funcionaba, pero se caía cada dos horas. No entendía por qué. Tardé semanas en darme cuenta de que el problema era la RAM.
+Sin saber absolutamente nada.
 
-Esa frustración fue lo que me empujó a aprender de verdad.
+## El inicio: copiar sin entender
 
-## Pterodactyl fue un cambio de nivel
+Mi primer “servidor” fue en Aternos, en 2020.
 
-Cuando migré a un VPS y configuré Pterodactyl por primera vez, sentí que había dado un salto enorme. No porque sea complicado, sino porque te obliga a entender lo que estás haciendo:
+Y como la mayoría, empecé haciendo lo peor que puedes hacer: instalar plugins sin entenderlos.
 
-- Tienes que configurar Wings en tu servidor
-- Tienes que entender los puertos
-- Tienes que saber qué hace cada servicio
+Entraba a páginas de Spigot, Bukkit, Discords… y todo parecía otro idioma. Cada cambio era abrir Google. Cada error era copiar y pegar soluciones sin saber qué hacían.
 
-Eso es aprendizaje de verdad. No tutoriales de YouTube donde alguien te da los comandos sin explicar nada.
+Un ejemplo claro: tardé casi un mes en crear mi primera región con WorldGuard.
+
+Mientras tanto, protegía todo con ProtectionStones sin tener claro por qué funcionaba o qué estaba haciendo realmente.
+
+El servidor tenía de todo:
+- Lag constante  
+- Caídas  
+- Errores raros  
+- Mundos corruptos  
+
+Y lo peor: no entendía el motivo.
+
+Estuve así unos cinco meses sin avanzar realmente.
+
+## El punto donde deja de ser un juego
+
+El cambio no vino por aprender más comandos.
+
+Vino cuando la gente empezó a entrar… y a irse.
+
+El servidor se veía mal, funcionaba peor, y no había razón para quedarse.
+
+Ahí fue donde dejó de ser “probar cosas” y empezó a ser un problema que tenía que entender.
+
+Fue la primera vez que me di cuenta de algo importante:
+
+Configurar un plugin no es programación avanzada.  
+Pero si no lo entiendes, lo parece.
+
+## Dejar tutoriales y empezar a entender
+
+Hubo un punto donde dejé de seguir tutoriales ciegamente.
+
+No porque fueran inútiles, sino porque no estaban hechos para lo que yo quería.
+
+Ahí empecé a hacer algo que cambia todo: leer documentación.
+
+Las wikis de los plugins, las configuraciones completas, qué hacía cada opción.
+
+Eso fue lo que realmente marcó diferencia.
+
+No es lo más entretenido, pero es lo único que te saca del nivel básico.
+
+## El salto: entender qué hay detrás
+
+Mi segundo servidor fue el primero que consideré “serio”.
+
+Ahí fue donde entré al mundo de los VPS y herramientas como Pterodactyl y Wings.
+
+Y ese cambio no fue solo técnico, fue mental.
+
+Hasta ese momento, todo lo reducía a:
+“más RAM = mejor servidor”
+
+Cuando pasas a un VPS, eso deja de tener sentido.
+
+Empiezas a entender:
+- Qué consume realmente recursos  
+- Cómo afecta el entorno completo  
+- Por qué el rendimiento no depende solo de números  
+
+Es la primera vez que ves que Minecraft no es solo Minecraft. Hay todo un sistema detrás que normalmente un host oculta.
+
+## Lo que nadie te dice al empezar
+
+Hay dos cosas que marcan la diferencia y casi nadie menciona:
+
+La primera es simple:  
+Leer documentación vale más que ver diez tutoriales.
+
+La segunda es incómoda:  
+La mayoría de problemas no se arreglan comprando más potencia.
+
+Un host premium o 32GB de RAM no arreglan una mala configuración.
+
+Si no entiendes lo que estás haciendo, solo estás escalando errores.
+
+## Después de eso
+
+Con el tiempo, pasé de no entender nada a poder montar servidores funcionales, optimizados y vendibles.
+
+No porque aprendiera “trucos”, sino porque empecé a entender cómo funciona todo en conjunto.
+
+Y eso cambia completamente la forma en la que construyes.
 
 ## Lo que nadie te dice
 
@@ -932,59 +1013,5 @@ Si al intentar explicar algo te trabas, eso es información valiosa. Es exactame
 
 No evites esa incomodidad. Es el motor del aprendizaje real.
     `
-  },
-  {
-    id: 4,
-    title: "Herramientas que uso todos los días como admin",
-    excerpt: "Mi stack diario: desde monitoreo hasta automatización. Todo lo que simplifica mi vida.",
-    date: "2026-04-19",
-    readTime: "6 minutos",
-    tags: ["Tools", "Productividad", "Admin"],
-    image: "🛠️",
-    content: `
-# Herramientas que uso todos los días como admin
-
-No todas las herramientas merecen un lugar en tu stack. Estas son las que han demostrado valor real en mi flujo de trabajo diario.
-
-## Terminal y shell
-
-**Wezterm** como emulador de terminal. Rápido, configurable en Lua, multiplataforma.
-
-**Zsh + Oh My Zsh** con estos plugins:
-- \`zsh-autosuggestions\` — completa comandos basándose en tu historial
-- \`zsh-syntax-highlighting\` — colorea la sintaxis en tiempo real
-- \`z\` — navegación rápida entre directorios frecuentes
-
-## Monitoreo de servidores
-
-**htop** para una visión rápida de procesos y recursos. Simple y efectivo.
-
-**Netdata** cuando necesito métricas más detalladas. Se instala en un comando y tiene un dashboard web decente.
-
-\`\`\`bash
-wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh
-sh /tmp/netdata-kickstart.sh
-\`\`\`
-
-## Gestión de archivos y logs
-
-**lf** como file manager en terminal. Mucho más rápido que navegar con \`cd\` y \`ls\`.
-
-**grc** para colorear la salida de comandos como \`tail -f\`, \`ping\`, \`df\`. Hace los logs mucho más legibles.
-
-## Automatización
-
-**cron** para tareas programadas simples. Backups automáticos, limpieza de logs, etc.
-
-Para cosas más complejas, scripts en Bash. No necesitas Python para la mayoría de tareas de administración.
-
-## Lo que no uso
-
-No uso herramientas de monitoreo enterprise para proyectos personales. Prometheus + Grafana es overkill si administras 2-3 servidores. Empieza simple.
-
-## Conclusión
-
-Las mejores herramientas son las que usas. No las más populares ni las más potentes. Las que se adaptan a tu flujo de trabajo y no te dan fricción.
-    `
-  },
+  }, 
 ];
