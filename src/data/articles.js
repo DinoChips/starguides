@@ -834,49 +834,40 @@ Un ejemplo claro: tardé casi un mes en crear mi primera región con WorldGuard.
 Mientras tanto, protegía todo con ProtectionStones sin tener claro por qué funcionaba o qué estaba haciendo realmente.
 
 El servidor tenía de todo:
-- Lag constante  
-- Caídas  
-- Errores raros  
-- Mundos corruptos  
+- Lag constante
+- Caídas
+- Errores raros
+- Mundos corruptos
 
 Y lo peor: no entendía el motivo.
 Estuve así unos cinco meses sin avanzar realmente.
 
 ## El punto donde deja de ser un juego
 
-El cambio no vino por aprender más comandos.
-Vino cuando la gente empezó a entrar… y a irse.
-El servidor se veía mal, funcionaba peor, y no había razón para quedarse.
-Ahí fue donde dejó de ser “probar cosas” y empezó a ser un problema que tenía que entender.
+El cambio no vino por aprender más comandos, vino cuando la gente empezó a entrar… y a irse. El servidor se veía mal, funcionaba peor, y no había razón para quedarse. Ahí fue donde dejó de ser “probar cosas” y empezó a ser un problema que tenía que entender.
 Fue la primera vez que me di cuenta de algo importante:
 
-Configurar un plugin no es programación avanzada.  
+Configurar un plugin no es programación avanzada.
 Pero si no lo entiendes, lo parece.
 
 ## Dejar tutoriales y empezar a entender
 
-Hubo un punto donde dejé de seguir tutoriales ciegamente.
-No porque fueran inútiles, sino porque no estaban hechos para lo que yo quería.
-Ahí empecé a hacer algo que cambia todo: leer documentación.
-Las wikis de los plugins, las configuraciones completas, qué hacía cada opción.
-Eso fue lo que realmente marcó diferencia.
-No es lo más entretenido, pero es lo único que te saca del nivel básico.
+Hubo un punto donde dejé de seguir tutoriales ciegamente. No porque fueran inútiles, sino porque no estaban hechos para lo que yo quería. Ahí empecé a hacer algo que cambia todo: leer documentación.
+Las wikis de los plugins, las configuraciones completas, qué hacía cada opción. Eso fue lo que realmente marcó diferencia. No es lo más entretenido, pero es lo único que te saca del nivel básico.
 
 ## El salto: entender qué hay detrás
 
 Mi segundo servidor fue el primero que consideré “serio”.
-Ahí fue donde entré al mundo de los VPS y herramientas como Pterodactyl y Wings.
-Y ese cambio no fue solo técnico, fue mental.
+Ahí fue donde entré al mundo de los VPS y herramientas como Pterodactyl y Wings. Y ese cambio no fue solo técnico, fue mental.
 
-Hasta ese momento, todo lo reducía a:
-“más RAM = mejor servidor”
+Hasta ese momento, todo lo reducía a: “más RAM = mejor servidor”
 
 Cuando pasas a un VPS, eso deja de tener sentido.
 
 Empiezas a entender:
-- Qué consume realmente recursos  
-- Cómo afecta el entorno completo  
-- Por qué el rendimiento no depende solo de números  
+- Qué consume realmente recursos
+- Cómo afecta el entorno completo
+- Por qué el rendimiento no depende solo de números
 
 Es la primera vez que ves que Minecraft no es solo Minecraft. Hay todo un sistema detrás que normalmente un host oculta.
 
@@ -884,10 +875,10 @@ Es la primera vez que ves que Minecraft no es solo Minecraft. Hay todo un sistem
 
 Hay dos cosas que marcan la diferencia y casi nadie menciona:
 
-La primera es simple:  
+La primera es simple:
 Leer documentación vale más que ver diez tutoriales.
 
-La segunda es incómoda:  
+La segunda es incómoda:
 La mayoría de problemas no se arreglan comprando más potencia.
 Un host premium o 32GB de RAM no arreglan una mala configuración.
 Si no entiendes lo que estás haciendo, solo estás escalando errores.
@@ -901,15 +892,12 @@ Y eso cambia completamente la forma en la que construyes.
 ## Lo que nadie te dice
 
 **Vas a romper cosas.** Y está bien. Cada servidor que se cae por algo que hiciste mal es una lección que no se te olvida.
-
 **La documentación es tu mejor amigo.** PaperMC, Pterodactyl, Ubuntu — todos tienen documentación buena. Úsala antes de preguntar en Discord.
-
 **La comunidad ayuda, pero aprende a buscar primero.** El 80% de tus dudas ya las tuvo alguien antes.
 
 ## ¿Por qué sigo?
 
 Porque cada vez que alguien entra a un servidor que yo mantuve y tiene una buena experiencia, eso vale. No es glamuroso, pero es real.
-
 Si estás empezando: no te rindas. El primer mes es el más duro.
     `
   },
