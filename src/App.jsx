@@ -1,14 +1,48 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
 import { Blog } from './pages/Blog';
+import { BlogPost } from './pages/BlogPost';
 import { Categories } from './pages/Categories';
 import { Article } from './pages/Article';
 import { Contact } from './pages/Contact';
 import { Store } from './pages/Store';
 import { Legal } from './pages/Legal';
 import './index.css';
+
+// ── Hook SEO: actualiza <title> y meta tags por ruta ──────
+export function useSEO({ title, description, url, type = 'website' }) {
+  useEffect(() => {
+    const base = 'StarGuides';
+    const fullTitle = title ? `${title} — ${base}` : `${base} — Guías técnicas de IT, Minecraft y Web Dev`;
+    const desc = description || 'StarGuides: guías técnicas de Minecraft, IT, networking y desarrollo web.';
+    const canonical = url || window.location.href;
+
+    document.title = fullTitle;
+    setMeta('name', 'description', desc);
+    setMeta('property', 'og:title', fullTitle);
+    setMeta('property', 'og:description', desc);
+    setMeta('property', 'og:url', canonical);
+    setMeta('property', 'og:type', type);
+    setMeta('name', 'twitter:title', fullTitle);
+    setMeta('name', 'twitter:description', desc);
+    setLink('canonical', canonical);
+  }, [title, description, url, type]);
+}
+
+function setMeta(attr, key, value) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) { el = document.createElement('meta'); el.setAttribute(attr, key); document.head.appendChild(el); }
+  el.setAttribute('content', value);
+}
+
+function setLink(rel, href) {
+  let el = document.querySelector(`link[rel="${rel}"]`);
+  if (!el) { el = document.createElement('link'); el.setAttribute('rel', rel); document.head.appendChild(el); }
+  el.setAttribute('href', href);
+}
 
 function Layout() {
   return (
@@ -23,6 +57,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/categorias" element={<Categories />} />
         <Route path="/articulo/:id" element={<Article />} />
         <Route path="/contacto" element={<Contact />} />

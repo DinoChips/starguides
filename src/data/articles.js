@@ -805,8 +805,186 @@ export const categories = [
 
 // ── BLOG POSTS ─────────────────────────────────────────────
 export const blogPosts = [
-  { id: 1, title: "Cómo empecé a administrar servidores desde cero",        excerpt: "Mi historia real: Paper, Pterodactyl, Wings en Ubuntu. Lo que nadie te cuenta al principio.",       date: "2026-04-28", readTime: "5 minutos", tags: ["Personal", "Minecraft", "Historia"],  image: "📖" },
-  { id: 2, title: "3 errores que cometí aprendiendo networking",             excerpt: "Confesiones reales de un estudiante de IT. Estos errores me costaron horas de frustración.",          date: "2026-04-25", readTime: "4 minutos", tags: ["Networking", "Errores", "Aprendizaje"], image: "⚠️" },
-  { id: 3, title: "Por qué enseñar es la mejor forma de aprender",           excerpt: "Cuando le explicas algo a alguien, lo entiendes mejor tú mismo. La ciencia detrás de esto.",          date: "2026-04-22", readTime: "3 minutos", tags: ["Aprendizaje", "Enseñanza", "Personal"], image: "💡" },
-  { id: 4, title: "Herramientas que uso todos los días como admin",          excerpt: "Mi stack diario: desde monitoreo hasta automatización. Todo lo que simplifica mi vida.",             date: "2026-04-19", readTime: "6 minutos", tags: ["Tools", "Productividad", "Admin"],     image: "🛠️" },
+  {
+    id: 1,
+    title: "Cómo empecé a administrar servidores desde cero",
+    excerpt: "Mi historia real: Paper, Pterodactyl, Wings en Ubuntu. Lo que nadie te cuenta al principio.",
+    date: "2026-04-28",
+    readTime: "5 minutos",
+    tags: ["Personal", "Minecraft", "Historia"],
+    image: "📖",
+    content: `
+# Cómo empecé a administrar servidores desde cero
+
+Empecé sin saber nada. Literalmente. No sabía qué era un VPS, no sabía qué era SSH, y la primera vez que vi una terminal pensé que había roto algo.
+
+Esto es lo que nadie te cuenta cuando empiezas.
+
+## El primer servidor
+
+Mi primer servidor de Minecraft lo monté en un PC viejo que tenía en el cuarto. Funcionaba, pero se caía cada dos horas. No entendía por qué. Tardé semanas en darme cuenta de que el problema era la RAM.
+
+Esa frustración fue lo que me empujó a aprender de verdad.
+
+## Pterodactyl fue un cambio de nivel
+
+Cuando migré a un VPS y configuré Pterodactyl por primera vez, sentí que había dado un salto enorme. No porque sea complicado, sino porque te obliga a entender lo que estás haciendo:
+
+- Tienes que configurar Wings en tu servidor
+- Tienes que entender los puertos
+- Tienes que saber qué hace cada servicio
+
+Eso es aprendizaje de verdad. No tutoriales de YouTube donde alguien te da los comandos sin explicar nada.
+
+## Lo que nadie te dice
+
+**Vas a romper cosas.** Y está bien. Cada servidor que se cae por algo que hiciste mal es una lección que no se te olvida.
+
+**La documentación es tu mejor amigo.** PaperMC, Pterodactyl, Ubuntu — todos tienen documentación buena. Úsala antes de preguntar en Discord.
+
+**La comunidad ayuda, pero aprende a buscar primero.** El 80% de tus dudas ya las tuvo alguien antes.
+
+## ¿Por qué sigo?
+
+Porque cada vez que alguien entra a un servidor que yo mantuve y tiene una buena experiencia, eso vale. No es glamuroso, pero es real.
+
+Si estás empezando: no te rindas. El primer mes es el más duro.
+    `
+  },
+  {
+    id: 2,
+    title: "3 errores que cometí aprendiendo networking",
+    excerpt: "Confesiones reales de un estudiante de IT. Estos errores me costaron horas de frustración.",
+    date: "2026-04-25",
+    readTime: "4 minutos",
+    tags: ["Networking", "Errores", "Aprendizaje"],
+    image: "⚠️",
+    content: `
+# 3 errores que cometí aprendiendo networking
+
+Aprender networking es difícil. No porque sea imposible, sino porque es muy fácil memorizar sin entender. Estos son los tres errores que más me frenaron.
+
+## Error 1: Memorizar subnetting sin entenderlo
+
+Pasé semanas memorizando máscaras de subred. /24 = 255.255.255.0. /16 = 255.255.0.0. Lo sabía de memoria.
+
+Pero si me preguntaban "¿cuántos hosts caben en una /26?", me bloqueaba.
+
+**La solución:** aprender la lógica binaria detrás. Una vez que entiendes que /26 significa 6 bits para hosts = 2⁶ - 2 = 62 hosts, no necesitas memorizar nada.
+
+## Error 2: Estudiar teoría sin practicar en Packet Tracer
+
+Leía sobre OSPF, STP, VLANs. Entendía los conceptos. Pero cuando abrí Packet Tracer por primera vez y tuve que configurar algo real, no sabía ni por dónde empezar.
+
+**La teoría sin práctica es inútil en networking.** Cada concepto que estudies, configúralo en el simulador el mismo día.
+
+## Error 3: Ignorar la capa física
+
+Me obsesioné con las capas 3 y 4. IP, TCP, rutas. Pero ignoré completamente la capa 1 y 2.
+
+El resultado: cuando tuve que diagnosticar un problema real en una red, no entendía por qué fallaba la comunicación entre VLANs. El problema estaba en la configuración del trunk del switch — algo de capa 2 que había ignorado.
+
+**Las capas bajas importan.** No las saltes.
+
+## Conclusión
+
+El aprendizaje de networking es iterativo. Vuelves a lo mismo varias veces, cada vez con más contexto, y cada vez lo entiendes mejor. No te frustres si al principio no encaja todo.
+    `
+  },
+  {
+    id: 3,
+    title: "Por qué enseñar es la mejor forma de aprender",
+    excerpt: "Cuando le explicas algo a alguien, lo entiendes mejor tú mismo. La ciencia detrás de esto.",
+    date: "2026-04-22",
+    readTime: "3 minutos",
+    tags: ["Aprendizaje", "Enseñanza", "Personal"],
+    image: "💡",
+    content: `
+# Por qué enseñar es la mejor forma de aprender
+
+Existe una técnica de aprendizaje llamada la Técnica Feynman. La premisa es simple: si no puedes explicar algo con palabras sencillas, no lo entiendes de verdad.
+
+## Cómo funciona en la práctica
+
+Cuando estudias algo solo, puedes engañarte a ti mismo. Lees, asientes, piensas que entendiste. Pero cuando alguien te pregunta "¿y eso por qué funciona así?", te das cuenta de los agujeros en tu comprensión.
+
+Enseñar fuerza esa honestidad.
+
+## Mi experiencia personal
+
+Empecé StarGuides justamente por esto. Escribir guías me obliga a entender cada paso antes de publicarlo. Si no soy capaz de explicarlo claramente, es porque yo mismo no lo tengo claro.
+
+Cada guía que escribo me enseña más que estudiarla para mí solo.
+
+## Cómo aplicarlo sin tener audiencia
+
+No necesitas un blog o un canal de YouTube. Puedes:
+
+- Explicarle algo a un amigo aunque no le interese
+- Escribir notas como si se las explicaras a alguien más
+- Grabarte en audio explicando un concepto
+
+El punto es externalizar el conocimiento y forzarte a articularlo.
+
+## La incomodidad es la señal
+
+Si al intentar explicar algo te trabas, eso es información valiosa. Es exactamente lo que necesitas estudiar más.
+
+No evites esa incomodidad. Es el motor del aprendizaje real.
+    `
+  },
+  {
+    id: 4,
+    title: "Herramientas que uso todos los días como admin",
+    excerpt: "Mi stack diario: desde monitoreo hasta automatización. Todo lo que simplifica mi vida.",
+    date: "2026-04-19",
+    readTime: "6 minutos",
+    tags: ["Tools", "Productividad", "Admin"],
+    image: "🛠️",
+    content: `
+# Herramientas que uso todos los días como admin
+
+No todas las herramientas merecen un lugar en tu stack. Estas son las que han demostrado valor real en mi flujo de trabajo diario.
+
+## Terminal y shell
+
+**Wezterm** como emulador de terminal. Rápido, configurable en Lua, multiplataforma.
+
+**Zsh + Oh My Zsh** con estos plugins:
+- \`zsh-autosuggestions\` — completa comandos basándose en tu historial
+- \`zsh-syntax-highlighting\` — colorea la sintaxis en tiempo real
+- \`z\` — navegación rápida entre directorios frecuentes
+
+## Monitoreo de servidores
+
+**htop** para una visión rápida de procesos y recursos. Simple y efectivo.
+
+**Netdata** cuando necesito métricas más detalladas. Se instala en un comando y tiene un dashboard web decente.
+
+\`\`\`bash
+wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh
+sh /tmp/netdata-kickstart.sh
+\`\`\`
+
+## Gestión de archivos y logs
+
+**lf** como file manager en terminal. Mucho más rápido que navegar con \`cd\` y \`ls\`.
+
+**grc** para colorear la salida de comandos como \`tail -f\`, \`ping\`, \`df\`. Hace los logs mucho más legibles.
+
+## Automatización
+
+**cron** para tareas programadas simples. Backups automáticos, limpieza de logs, etc.
+
+Para cosas más complejas, scripts en Bash. No necesitas Python para la mayoría de tareas de administración.
+
+## Lo que no uso
+
+No uso herramientas de monitoreo enterprise para proyectos personales. Prometheus + Grafana es overkill si administras 2-3 servidores. Empieza simple.
+
+## Conclusión
+
+Las mejores herramientas son las que usas. No las más populares ni las más potentes. Las que se adaptan a tu flujo de trabajo y no te dan fricción.
+    `
+  },
 ];
