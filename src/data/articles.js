@@ -819,7 +819,6 @@ export const blogPosts = [
 No empecé por curiosidad ni por dinero.
 
 Empecé porque el primer servidor de Minecraft en el que jugué empezó a morir.
-
 Cada vez entraba menos gente, todo se sentía abandonado, y eventualmente cerró. En ese punto no quise buscar otro. Quise hacer el mío.
 
 Sin saber absolutamente nada.
@@ -827,9 +826,7 @@ Sin saber absolutamente nada.
 ## El inicio: copiar sin entender
 
 Mi primer “servidor” fue en Aternos, en 2020.
-
 Y como la mayoría, empecé haciendo lo peor que puedes hacer: instalar plugins sin entenderlos.
-
 Entraba a páginas de Spigot, Bukkit, Discords… y todo parecía otro idioma. Cada cambio era abrir Google. Cada error era copiar y pegar soluciones sin saber qué hacían.
 
 Un ejemplo claro: tardé casi un mes en crear mi primera región con WorldGuard.
@@ -843,19 +840,14 @@ El servidor tenía de todo:
 - Mundos corruptos  
 
 Y lo peor: no entendía el motivo.
-
 Estuve así unos cinco meses sin avanzar realmente.
 
 ## El punto donde deja de ser un juego
 
 El cambio no vino por aprender más comandos.
-
 Vino cuando la gente empezó a entrar… y a irse.
-
 El servidor se veía mal, funcionaba peor, y no había razón para quedarse.
-
 Ahí fue donde dejó de ser “probar cosas” y empezó a ser un problema que tenía que entender.
-
 Fue la primera vez que me di cuenta de algo importante:
 
 Configurar un plugin no es programación avanzada.  
@@ -864,23 +856,16 @@ Pero si no lo entiendes, lo parece.
 ## Dejar tutoriales y empezar a entender
 
 Hubo un punto donde dejé de seguir tutoriales ciegamente.
-
 No porque fueran inútiles, sino porque no estaban hechos para lo que yo quería.
-
 Ahí empecé a hacer algo que cambia todo: leer documentación.
-
 Las wikis de los plugins, las configuraciones completas, qué hacía cada opción.
-
 Eso fue lo que realmente marcó diferencia.
-
 No es lo más entretenido, pero es lo único que te saca del nivel básico.
 
 ## El salto: entender qué hay detrás
 
 Mi segundo servidor fue el primero que consideré “serio”.
-
 Ahí fue donde entré al mundo de los VPS y herramientas como Pterodactyl y Wings.
-
 Y ese cambio no fue solo técnico, fue mental.
 
 Hasta ese momento, todo lo reducía a:
@@ -904,17 +889,13 @@ Leer documentación vale más que ver diez tutoriales.
 
 La segunda es incómoda:  
 La mayoría de problemas no se arreglan comprando más potencia.
-
 Un host premium o 32GB de RAM no arreglan una mala configuración.
-
 Si no entiendes lo que estás haciendo, solo estás escalando errores.
 
 ## Después de eso
 
 Con el tiempo, pasé de no entender nada a poder montar servidores funcionales, optimizados y vendibles.
-
 No porque aprendiera “trucos”, sino porque empecé a entender cómo funciona todo en conjunto.
-
 Y eso cambia completamente la forma en la que construyes.
 
 ## Lo que nadie te dice
